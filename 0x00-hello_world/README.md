@@ -1,1 +1,1 @@
-This readme it's about low level C language
+C programing language for Hello World
