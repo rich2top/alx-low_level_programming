@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * print_alphabet_x10 in lowercase
- * followwed by a new line
- */
+ * main - print alphabet_x10 in lowercase
+ * followed by a new line
+*/
 void print_alphabet_x10(void)
 {
 	char ch;
