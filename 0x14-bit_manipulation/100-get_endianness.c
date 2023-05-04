@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * get_endianness - checks the byte for big/small-endian
@@ -8,7 +7,7 @@
 
 int get_endianness(void)
 {
-	unsigned int i = 0;
+	unsigned int i = 1;
 	char *c = (char *) &i;
 
 return (*c);
