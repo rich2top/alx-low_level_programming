@@ -6,9 +6,9 @@ char *create_buffer(char *file);
 void close_file(int fd);
 
 /**
- * create_buffer - Allocate 1024 bytes to a buffer
- * @file: the name of the file buffer is storing chars
- * Return: a pointer to the alocated buffer
+ * create_buffer - Allocates 1024 bytes to a buffer
+ * @file: the name of the file buffer is storing chars for
+ * Return: a pointer to the newly allocated buffer
  */
 
 char *create_buffer(char *file)
@@ -46,11 +46,10 @@ void close_file(int fd)
 }
 
 /**
- * main - copies from one file to another
+ * main - copies the content of a file to another file.
  * @argc: the number of arguments supplied to the program
  * @argv: an array of pointers to the arguments
  * Return: 0 on success
- *
  * Description: If the argument count is incorrect - exit code 97
  * if file_from does not exist or cannot be read - exit code 98
  * if file_to cannot be created or written to - exit code 99
