@@ -191,10 +191,10 @@ void print_abi(unsigned char *e_ident)
  */
 void print_type(unsigned int e_type, unsigned char *e_ident)
 {
-	if (e_iden[EI_DATA] == ELFDATA2MSB)
+	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type >>= 8;
 
-	ptintf(" Type: ");
+	printf(" Type: ");
 	switch (e_type)
 	{
 		case ET_NONE:
@@ -258,13 +258,13 @@ void close_elf(int elf)
 /**
  * main - display the info contained in the elf header
  * @argc: the number of the arguments in the program
- * argv: an array of pointers to the arguments
+ * @argv: an array of pointers to the arguments
  *
  * Return: 0 on success
  * description: if the file is not an elf file or
- * 	the function fails - exit code 98
+ * the function fails - exit code 98
  */
-int main(int__attribute__((__unused__)) argc, char *argv[])
+int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	Elf64_Ehdr *header;
 	int o, r;
@@ -276,16 +276,14 @@ int main(int__attribute__((__unused__)) argc, char *argv[])
 		exit(98);
 	}
 	header = malloc(sizeof(Elf64_Ehdr));
-
 	if (header == NULL)
 	{
 		close_elf(o);
 		dprintf(STDERR_FILENO, "Error: Can't read the file %s\n", argv[1]);
-		exit(98).
+		exit(98);
 	}
 
 	r = read(o, header, sizeof(Elf64_Ehdr));
-
 	if (r == -1)
 	{
 		free(header);
@@ -293,9 +291,8 @@ int main(int__attribute__((__unused__)) argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
 		exit(98);
 	}
-
 	check_elf(header->e_ident);
-	print("ELF Header:\n");
+	printf("ELF Header:\n");
 	print_magic(header->e_ident);
 	print_class(header->e_ident);
 	print_data(header->e_ident);
